@@ -8,14 +8,18 @@ const Pagination = props => {
         pagesArr.push(i);
     }
 
-    console.log(pagesArr);
     return (
         <div>
+            {
+            pagesArr.length > 1 &&
             <ul style={{display:"flex", listStyleType: "none"}}>
                 {pagesArr.map(page => (
-                    <li style={{marginLeft:"10px"}}>{page}</li>
+                    <li key={page} style={{marginLeft:"10px"}}>{page}</li>
                 ))}
             </ul>
+            }
+            <button>prev</button>
+            <button>next</button>
         </div>
 
     );
